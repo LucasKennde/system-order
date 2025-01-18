@@ -73,7 +73,7 @@ export const Signup = () => {
                     className='w-full bg-blue-500 text-white py-2 rounded-md'
                     onClick={handleSubmit}
                 >Cadastrar</Button>
-                <Link to='/signin' className='text-blue-500'>Já tem conta? clique aqui</Link>
+                <Link to='/' className='text-blue-500'>Já tem conta? clique aqui</Link>
             </form>
         </div>
     </>

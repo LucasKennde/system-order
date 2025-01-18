@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
           <ToastContainer />
           <Routes>
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/" element={<SignIn />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/cliente" element={<Client />} />
