@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
 import logo from '../../images/logo.png';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
@@ -11,7 +11,7 @@ export const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
+    const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault();
         const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -30,6 +30,7 @@ export const Signup = () => {
             users.push(newUser);
             localStorage.setItem('users', JSON.stringify(users));
             toast.success('Usuário cadastrado com sucesso');
+            navigate('/');
         }
     }
     return <>
@@ -37,7 +38,7 @@ export const Signup = () => {
             <div className="w-screen flex justify-center ">
                 <img src={logo} alt="" className='w-40' />
             </div>
-            <form className='w-full flex flex-col items-center justify-center px-10 gap-2'>
+            <form className='w-full flex flex-col items-center justify-center px-10 gap-2' onSubmit={handleSubmit}>
                 <Input
                     placeholder='E-mail'
                     // label='E-mail'
@@ -71,7 +72,6 @@ export const Signup = () => {
 
                 <Button
                     className='w-full bg-blue-500 text-white py-2 rounded-md'
-                    onClick={handleSubmit}
                 >Cadastrar</Button>
                 <Link to='/' className='text-blue-500'>Já tem conta? clique aqui</Link>
             </form>
