@@ -22,7 +22,7 @@ export const Dashboard = () => {
                             >
                                 <div className="flex items-center justify-between mb-2">
                                     <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
-                                        <Briefcase className="text-blue-500" /> Ordem de Serviço {order.id}
+                                        <Briefcase className="text-blue-500" /> Ordem de Serviço {index +1}
                                     </h2>
                                     {order.status === "Finalizado" ? (
                                         <CheckCircle className="text-green-500" />
