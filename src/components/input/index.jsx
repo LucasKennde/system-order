@@ -22,7 +22,7 @@ export const Input = ({
         <div className="px-2 py-3 flex border-2 rounded-md items-center">
           <input
             onBlur={onBlur}
-            className="w-full  outline-none bg-transparent"
+            className="w-full text-base outline-none bg-transparent"
             type={
               type == "password" ? (toggleType ? "text" : "password") : type
             }
